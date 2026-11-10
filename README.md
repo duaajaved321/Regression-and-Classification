@@ -1,31 +1,43 @@
 # Chronic Kidney Disease (CKD) — Regression and Classification
 
-This is my machine learning milestone project. I used the **UCI Risk Factor Prediction of Chronic Kidney Disease** dataset to practice regression and classification in Python.
+An educational supervised machine-learning project using the UCI Risk Factor Prediction of Chronic Kidney Disease dataset.
 
-## What I Did
+## Objective
 
-- Loaded and explored the dataset.
-- Checked missing values and prepared the data for modeling.
-- Used **Linear Regression** to predict an approximate GFR value from the dataset's GFR ranges.
-- Used **Logistic Regression** to classify CKD and non-CKD records.
-- Split the data into training and testing sets.
-- Used preprocessing pipelines for numerical and categorical features.
-- Evaluated the models using metrics and graphs, and compared them with simple baselines.
-- Used cross-validation on the classification training data.
+- **Regression:** Estimate an approximate GFR proxy from interval-valued GFR data.
+- **Classification:** Predict the dataset's CKD / not-CKD label using Logistic Regression.
 
-## Tools and Libraries
+## Workflow
 
-Python, Google Colab, pandas, NumPy, Matplotlib, scikit-learn, and ucimlrepo.
+- Inspect the dataset, data types, class distribution, and missing values.
+- Convert available GFR intervals to an approximate numerical proxy for the regression exercise.
+- Build separate regression and classification datasets.
+- Exclude outcome-related columns such as `stage`, `affected`, and original GFR information from model inputs.
+- Split training and testing data before fitting preprocessing.
+- Use scikit-learn pipelines for imputation, scaling, and categorical encoding.
+- Evaluate with regression and classification metrics, visualizations, and cross-validation.
 
-## How to Run
+## Tools
 
-1. Open `CKD_Regression_Classification_Reviewed.ipynb` in Google Colab.
-2. Go to **Runtime → Run all**.
-3. The notebook installs `ucimlrepo` and loads the dataset automatically, so an internet connection is needed.
-4. Check the outputs and graphs to see the model results.
+Python, Pandas, NumPy, Matplotlib, scikit-learn, ucimlrepo, Google Colab / Jupyter.
 
-## Note
+## Run the Notebook
 
-This project is for learning and experimentation only. The dataset is small (200 records), so the results may not generalize well. The regression target is an **approximation from GFR ranges**, not an exact measurement. It is not intended for medical diagnosis.
+1. Install dependencies:
 
-**Dataset:** [Risk Factor Prediction of Chronic Kidney Disease — UCI](https://archive.ics.uci.edu/dataset/857/risk+factor+prediction+of+chronic+kidney+disease) (CC BY 4.0).
+   ```bash
+   pip install -r requirements.txt
+   ```
+
+2. Open `CKD_Regression_Classification.ipynb` in Jupyter Notebook or Google Colab.
+3. Run the notebook from top to bottom. Dataset retrieval requires internet access.
+
+## Dataset
+
+[UCI Risk Factor Prediction of Chronic Kidney Disease](https://archive.ics.uci.edu/dataset/857/risk+factor+prediction+of+chronic+kidney+disease) (CC BY 4.0).
+
+## Important Limitations
+
+The dataset contains only 200 records. The regression target is an approximation derived from GFR ranges, not a laboratory-measured GFR value. Results are educational and are not suitable for medical decisions or diagnosis.
+
+**Notebook:** `CKD_Regression_Classification.ipynb`
